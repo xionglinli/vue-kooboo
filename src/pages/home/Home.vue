@@ -1,35 +1,60 @@
 <template>
   <div class="container">
-    <home-header></home-header>
-    <home-banner :list="bannerList"></home-banner>
-    <home-content></home-content>
-    <home-banner
-      :list="projectList"
-      :slides="projectSlides"
-      :pBottom="projectBottom"
-    ></home-banner>
-    <home-technology :list="technologyList"></home-technology>
-    <home-footer></home-footer>
+    <app-banner :list="bannerList" />
+    <home-introduce />
+    <app-response
+      :callback="'change'"
+      @change="handleBannerChange"
+    >
+      <app-banner
+        :list="projectList"
+        :slides="projectSlides"
+        :pBottom="projectBottom"
+      />
+    </app-response>
+    <home-technology :list="technologyList" />
+    <app-image :imageData="imageData" />
   </div>
 </template>
 
 <script>
-import HomeHeader from '@/common/Header'
-import HomeBanner from '@/common/Banner'
-import HomeContent from './components/Content'
+import HomeIntroduce from './components/Introduce'
 import HomeTechnology from './components/Technology'
-import HomeFooter from '@/common/Footer'
 export default {
   name: 'Home',
   components: {
-    HomeHeader,
-    HomeBanner,
-    HomeContent,
-    HomeTechnology,
-    HomeFooter
+    HomeIntroduce,
+    HomeTechnology
+  },
+  methods: {
+    handleBannerChange (width) {
+      switch (true) {
+        case width > 1024 :
+          this.projectSlides = 4
+          this.projectBottom = 20
+          break
+        case width > 768 :
+          this.projectSlides = 3
+          this.projectBottom = 20
+          break
+        case width > 480 :
+          this.projectSlides = 2
+          this.projectBottom = 40
+          break
+        default:
+          this.projectSlides = 1
+          this.projectBottom = 60
+      }
+    }
   },
   data () {
     return {
+      imageData: {
+        'imgUrl': 'http://www.kooboo.org/style-images/bg-member.jpg',
+        'pShade': true,
+        'pModel': 'width',
+        'pHeight': 300
+      },
       bannerList: [{
         'id': '001',
         'imgUrl': 'http://www.kooboo.org/uploads/slider-index/bar2.jpg'
@@ -68,7 +93,7 @@ export default {
         'id': '009',
         'imgUrl': 'http://www.kooboo.org/uploads/case/slider/bookchoice.jpg'
       }],
-      projectSlides: 3,
+      projectSlides: 4,
       projectBottom: 20,
       technologyList: [{
         'id': '001',

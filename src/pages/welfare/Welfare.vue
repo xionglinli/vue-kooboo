@@ -1,26 +1,18 @@
 <template>
   <div class="container">
-    <welfare-header></welfare-header>
-    <welfare-picture :pictureData="pictureData"></welfare-picture>
-    <welfare-detail :list="detailList"></welfare-detail>
-    <welfare-tour></welfare-tour>
-    <welfare-footer></welfare-footer>
+    <app-picture :pictureData="pictureData" />
+    <welfare-detail :list="detailList" />
+    <welfare-tour />
   </div>
 </template>
 
 <script>
-import WelfareHeader from '@/common/Header'
-import WelfareFooter from '@/common/Footer'
-import WelfarePicture from '@/common/Picture'
 import WelfareDetail from './components/Detail'
 import WelfareTour from './components/Tour'
 
 export default {
   name: 'Welfare',
   components: {
-    WelfareHeader,
-    WelfareFooter,
-    WelfarePicture,
     WelfareDetail,
     WelfareTour
   },

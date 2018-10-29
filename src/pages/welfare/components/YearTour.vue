@@ -1,9 +1,9 @@
 <template>
   <div class="year-tour">
     <h2 class="year">{{list.year}}</h2>
-    <div class="list">
+    <div class="list flex">
       <div
-        class="item-wrapper"
+        class="item-wrapper col-lg-6 col-md-6 col-sm-12 col-xs-12"
         v-for="(item,index) of list['list']"
         :key="index"
       >
@@ -29,43 +29,43 @@ export default {
 
 <style lang="stylus" scoped>
   .year-tour
-    text-align: center
+    text-align center
     .year
-      font-size: .4rem
-      line-height: 1rem
+      font-size .4rem
+      line-height 1rem
     .list
-      position: relative
-      display: flex
-      flex-wrap: wrap
+      position relative
       &:before
-        background-color: #00aeef
-        content: ""
-        height: 100%
-        left: 50%
-        margin-left: -.04rem
-        position: absolute
-        top: 0
-        width: .02rem
-      .item-wrapper:nth-child(2n)
-        padding-top: 2.5rem
+        background-color #00aeef
+        content ""
+        height 100%
+        left 50%
+        margin-left -.04rem
+        position absolute
+        top 0
+        width .02rem
+      // .item-wrappernth-child(2n)
+      //   padding-top 2.5rem
       .item-wrapper
-        flex: 0 0 50%
-        box-sizing: border-box
-        padding: 1rem
+        box-sizing border-box
+        padding 0 1rem
+        margin 1rem 0
         .item
-          border: .01rem solid #d0d0d0;
+          border .01rem solid #d0d0d0;
           .img-wrapper
-            position: relative
-            overflow: hidden
-            width: 100%
-            height: 0
-            padding-bottom: 60%
+            position relative
+            overflow hidden
+            width 100%
+            height 0
+            padding-bottom 55%
             .img-item
-              width: 100%
+              width 100%
           .title
-            font-size: .3rem
-            line-height: 1.5rem
-            color: #00aeef
-            text-align: left
-            text-indent: 1em
+            position relative
+            padding .5rem 0
+            font-size .3rem
+            color #00aeef
+            background #fff
+            text-align left
+            text-indent 1em
 </style>

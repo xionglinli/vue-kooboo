@@ -1,23 +1,32 @@
 <template>
-  <div class="header-wrapper">
-    <div class="header">
-      <img src="http://www.kooboo.org/images/logo.png">
-      <div class="iconfont menu-btn"
-           v-show="menuBtn"
-           @click="handleClick">&#xe66d;</div>
-      <ul :class="{'blockMenu': showBlockMenu,
-                   'lineMenu': showLineMenu}"
-          v-show="showMenu">
-        <li @click="handleClick"
-            v-for="item of list"
-            :key="item.id">
-            <router-link :to='item.to' class="item">
-              {{item.text}}
-            </router-link>
-        </li>
-      </ul>
+  <app-response
+    :callback="'change'"
+    @change="handleResize"
+  >
+    <div class="header-wrapper">
+      <div class="header">
+        <img src="http://www.kooboo.org/images/logo.png">
+        <div class="iconfont menu-btn"
+             v-show="menuBtn"
+             @click="handleClick"
+        >
+          &#xe66d;
+        </div>
+        <ul :class="{'blockMenu': showBlockMenu,
+                     'lineMenu': showLineMenu}"
+            v-show="showMenu"
+        >
+          <li @click="handleClick"
+              v-for="item of list"
+              :key="item.id">
+              <router-link :to='item.to' class="item">
+                {{item.text}}
+              </router-link>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </app-response>
 </template>
 
 <script>
@@ -25,7 +34,6 @@ export default {
   name: 'Header',
   data () {
     return {
-      screenWidth: 0,
       timer: null,
       showMenu: true,
       showLineMenu: true,
@@ -59,10 +67,9 @@ export default {
     }
   },
   methods: {
-    handleResize () {
-      this.screenWidth = document.body.clientWidth
-      this.menuBtn = this.screenWidth < 1000
-      this.showBlockMenu = this.screenWidth < 1000
+    handleResize (width) {
+      this.menuBtn = width < 768
+      this.showBlockMenu = width < 768
     },
     handleClick () {
       if (this.showBlockMenu) {
@@ -75,17 +82,6 @@ export default {
       this.showLineMenu = !this.showBlockMenu
       this.showMenu = this.showLineMenu
     }
-  },
-  mounted () {
-    this.handleResize()
-    window.addEventListener('resize', () => {
-      if (this.timer) {
-        window.clearTimeout(this.timer)
-      }
-      this.timer = setTimeout(() => {
-        this.handleResize()
-      }, 50)
-    }, false)
   }
 }
 </script>
@@ -93,45 +89,45 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/variable.styl'
   .header-wrapper
-    height: .96rem
+    height .96rem
     .header
-      position: fixed
-      z-index: 100
-      display: flex
-      justify-content: space-between
-      left: 0
-      right: 0
-      height: .56rem
-      padding: .2rem .8rem
-      background: #fff
-      box-shadow: 0 0 .05rem #ccc
+      position fixed
+      z-index 100
+      display flex
+      justify-content space-between
+      left 0
+      right 0
+      height .56rem
+      padding .2rem 10%
+      background #fff
+      box-shadow 0 0 .05rem #ccc
       .lineMenu
-        display: flex
-        justify-content: space-between
-        align-items: center
+        display flex
+        justify-content space-between
+        align-items center
         .item
-          padding: .25rem .2rem
-          color: #333
+          padding .25rem .2rem
+          color #333
           &:hover
-            border-bottom: .08rem solid $lightBlue
+            border-bottom .08rem solid $lightBlue
       .menu-btn
-        font-size: .6rem
-        cursor: pointer
+        font-size .6rem
+        cursor pointer
         &:hover
-          color: $lightBlue
+          color $lightBlue
       .blockMenu
-        z-index: 100
-        position: absolute
-        top: .96rem
-        left: 0
-        right: 0
-        background: rgba(255, 255, 255, .8)
+        z-index 100
+        position absolute
+        top .96rem
+        left 0
+        right 0
+        background rgba(255, 255, 255, .8)
         .item
-          display: block
-          height: .24rem
-          line-height: .24rem
-          padding: .2rem
-          color: #333
+          display block
+          height .24rem
+          line-height .24rem
+          padding .2rem
+          color #333
           &:hover
-            color: $lightBlue
+            color $lightBlue
 </style>

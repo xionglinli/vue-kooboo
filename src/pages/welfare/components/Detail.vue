@@ -1,8 +1,8 @@
 <template>
   <div class="detail">
-    <div class="list">
+    <div class="list flex">
       <div
-        class="item"
+        class="item col-lg-3 col-md-4 col-sm-6 col-xs-12"
         v-for="(item,index) of list"
         :key="index"
       >
@@ -55,28 +55,25 @@ export default {
 
 <style lang="stylus" scoped>
   .detail
-    margin: 6%
+    margin 6%
     .list
-      display: flex
-      flex-wrap: wrap
-      justify-content: center
+      justify-content center
       .item
-        flex: 0 0 25%
-        box-sizing: border-box
-        padding: .5rem
-        text-align: center
-        line-height: .5rem
-        font-size: .25rem
+        box-sizing border-box
+        padding .5rem
+        text-align center
+        line-height .5rem
+        font-size .25rem
         .iconfont
-          margin: 0 auto
-          padding: .5rem
-          width: 1.2rem
-          height: 1.2rem
-          line-height: 1.2rem
-          font-size: 1.2rem
-          border-radius: 50%
-          cursor: pointer
+          margin 0 auto
+          padding .5rem
+          width 1.2rem
+          height 1.2rem
+          line-height 1.2rem
+          font-size 1.2rem
+          border-radius 50%
+          cursor pointer
         .title
-          font: bold .3rem arial
-          line-height: 1rem
+          font bold .3rem arial
+          line-height 1rem
 </style>

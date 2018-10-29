@@ -1,29 +1,21 @@
 <template>
   <div class="container">
-    <contact-header></contact-header>
-    <contact-bmap :list="location"></contact-bmap>
-    <contact-select
+    <contact-bmap :list="location" />
+    <app-select
       :list="selectList"
       @change="handleChange"
-    ></contact-select>
-    <contact-address :list="detailData"></contact-address>
-    <contact-footer></contact-footer>
+    />
+    <contact-address :list="detailData" />
   </div>
 </template>
 
 <script>
-import ContactHeader from '@/common/Header'
-import ContactFooter from '@/common/Footer'
-import ContactSelect from '@/common/Select'
 import ContactBmap from './components/Bmap'
 import ContactAddress from './components/Address'
 
 export default {
   name: 'Contact',
   components: {
-    ContactHeader,
-    ContactFooter,
-    ContactSelect,
     ContactBmap,
     ContactAddress
   },

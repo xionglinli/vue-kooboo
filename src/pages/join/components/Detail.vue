@@ -60,42 +60,42 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/variable.styl'
   .detail
-    margin: 5% 15%
+    margin 1rem 10%
     .item-wrapper,.title-wrapper
-      display: flex
-      width: 100%
-      margin-bottom: .3rem
+      display flex
+      width 100%
+      margin-bottom .3rem
       .item,.title
-        width: 50%
-        padding: .4rem
+        width 50%
+        padding .4rem
       .title
-        padding: .2rem .4rem
+        padding .2rem .4rem
     .item-wrapper
-      border: .02rem solid #f0f0f0
-      box-shadow: 0 0 10px #f0f0f0
-      user-select: none
-      cursor: pointer
+      border .02rem solid #f0f0f0
+      box-shadow 0 0 10px #f0f0f0
+      user-select none
+      cursor pointer
       &:hover
-        border: .02rem solid #c1c1c1
-        border-left: .06rem solid $selectOrange
+        border .02rem solid #c1c1c1
+        border-left .06rem solid $selectOrange
     .active
-      border: .02rem solid #c1c1c1
-      border-left: .06rem solid $selectOrange
+      border .02rem solid #c1c1c1
+      border-left .06rem solid $selectOrange
     .detail
-      margin: .8rem .5rem
-      line-height: .8rem
-      font-size: .2rem
+      margin .8rem .5rem
+      line-height .8rem
+      font-size .2rem
       .title
-        font: bold .25rem arial
-        line-height: .8rem
+        font bold .25rem arial
+        line-height .8rem
       .other
-        line-height: .5rem
-        font-size: .25rem
-        color: $selectOrange
+        line-height .5rem
+        font-size .25rem
+        color $selectOrange
         .email
-          display: inline-block
-          padding: 0 .2rem
-          border-radius:.25rem
-          color: #fff
-          background: $selectOrange
+          display inline-block
+          padding 0 .2rem
+          border-radius .25rem
+          color #fff
+          background $selectOrange
 </style>

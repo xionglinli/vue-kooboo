@@ -1,30 +1,20 @@
 <template>
   <div class="container">
-    <project-header></project-header>
-    <project-picture :pictureData="pictureData"></project-picture>
-    <project-select
+    <app-picture :pictureData="pictureData" />
+    <app-select
       :list="selectList"
       @change="handleChange"
-    ></project-select>
-    <project-detail :list="detailData"></project-detail>
-    <project-footer></project-footer>
+    />
+    <project-detail :list="detailData" />
   </div>
 </template>
 
 <script>
-import ProjectHeader from '@/common/Header'
-import ProjectFooter from '@/common/Footer'
-import ProjectPicture from '@/common/Picture'
-import ProjectSelect from '@/common/Select'
 import ProjectDetail from './components/Detail'
 
 export default {
   name: 'Project',
   components: {
-    ProjectHeader,
-    ProjectFooter,
-    ProjectPicture,
-    ProjectSelect,
     ProjectDetail
   },
   data () {

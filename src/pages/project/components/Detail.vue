@@ -1,8 +1,8 @@
 <template>
   <div class="detail">
-    <ul class="list">
+    <ul class="list flex">
       <li
-        class="item"
+        class="item col-lg-4 col-md-6 col-sm-12 col-xs-12"
         v-for="item of list"
         :key="item.title"
       >
@@ -27,25 +27,22 @@ export default {
 
 <style lang="stylus" scoped>
   .detail
-    margin: 0 10% 5% 10%
+    margin 0 10% 10% 10%
     .list
-      display: flex
-      flex-wrap: wrap
-      margin-left: -.5rem
-      margin-bottom: -1rem
+      margin-left -.5rem
+      margin-bottom -1rem
       .item
-        flex: 0 0 33.3333%
-        box-sizing: border-box
-        padding: 0 0 1rem .5rem
+        box-sizing border-box
+        padding 0 0 1rem .5rem
         .img-wrapper
-          position: relative
-          overflow: hidden
-          width: 100%
-          height: 0
-          padding-bottom: 60%
+          position relative
+          overflow hidden
+          width 100%
+          height 0
+          padding-bottom 60%
           .img-item
-            width: 100%
+            width 100%
         .title
-          font-size: .5rem
-          line-height: 1rem
+          font-size .5rem
+          line-height 1rem
 </style>

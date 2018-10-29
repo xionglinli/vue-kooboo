@@ -2,7 +2,7 @@
   <div class="breadcrumbs">
     <div class="guide">
       <span class="iconfont home">&#xe608;</span>
-      <span> > 关于我们 > </span>
+      <span> > 关于我们 > {{$route.path}}</span>
       <span class="title">{{title}}</span>
     </div>
     <div class="content">
@@ -70,9 +70,10 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/variable.styl'
   .breadcrumbs
-    margin: 5% 15% 5% 20%
+    margin: 5% auto
     .guide
-      margin-bottom: 10%
+      margin-bottom: 1rem
+      margin-left: 7.5%
       .home
         font-size: .4rem
       .title
@@ -81,9 +82,10 @@ export default {
         font-weight: bold
     .content
       display: flex
+      justify-content: center
       .left
-        width: 30%
-        margin-right: 10%
+        width: 20%
+        margin-right: 5%
         line-height: .8rem
         .list
           .item
@@ -93,7 +95,7 @@ export default {
               padding-left: .2rem
               color: $breadOrange
       .right
-        flex: 1
+        width: 60%
         line-height: .5rem
         .title
           line-height: 1rem
