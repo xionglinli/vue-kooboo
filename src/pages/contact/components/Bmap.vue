@@ -34,7 +34,7 @@ export default {
 
 <style lang="stylus" scoped>
   html,body,.allmap
-    width: 100%
-    height: 8rem
-    overflow: hidden
+    width 100%
+    height 8rem
+    overflow hidden
 </style>

@@ -1,24 +1,16 @@
 <template>
   <div class="container">
-    <about-header></about-header>
-    <about-picture :pictureData="pictureData"></about-picture>
-    <about-detail></about-detail>
-    <about-footer></about-footer>
+    <app-picture :pictureData="pictureData" />
+    <about-detail />
   </div>
 </template>
 
 <script>
-import AboutHeader from '@/common/Header'
-import AboutFooter from '@/common/Footer'
-import AboutPicture from '@/common/Picture'
 import AboutDetail from './components/Detail'
 
 export default {
   name: 'Home',
   components: {
-    AboutHeader,
-    AboutFooter,
-    AboutPicture,
     AboutDetail
   },
   data () {

@@ -5,11 +5,14 @@ import App from './App'
 import router from './router'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'styles/reset.css'
+import 'styles/util.css'
 import 'styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import GComponents from './common'
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
+Vue.use(GComponents)
 
 /* eslint-disable no-new */
 new Vue({

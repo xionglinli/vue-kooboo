@@ -1,30 +1,20 @@
 <template>
   <div class="container">
-    <join-header></join-header>
-    <join-picture :pictureData="pictureData"></join-picture>
-    <join-select
+    <app-picture :pictureData="pictureData" />
+    <app-select
       :list="selectList"
       @change="handleChange"
-    ></join-select>
-    <join-detail :list="detailData"></join-detail>
-    <join-footer></join-footer>
+    />
+    <join-detail :list="detailData" />
   </div>
 </template>
 
 <script>
-import JoinHeader from '@/common/Header'
-import JoinFooter from '@/common/Footer'
-import JoinPicture from '@/common/Picture'
-import JoinSelect from '@/common/Select'
 import JoinDetail from './components/Detail'
 
 export default {
   name: 'Join',
   components: {
-    JoinHeader,
-    JoinFooter,
-    JoinPicture,
-    JoinSelect,
     JoinDetail
   },
   data () {

@@ -4,7 +4,7 @@
       v-for="(data,index) of tourData"
       :key="index"
       :list="data"
-    ></year-tour>
+    />
   </div>
 </template>
 
@@ -55,6 +55,6 @@ export default {
 
 <style lang="stylus" scoped>
   .tour
-    padding: 5%
-    background: #f8f8f8
+    padding 5%
+    background #f8f8f8
 </style>
